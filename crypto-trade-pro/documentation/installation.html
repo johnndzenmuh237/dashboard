@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="classic">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Installation — CryptoTradePro Docs</title>
+<meta name="description" content="How to install and run the CryptoTradePro template.">
+<link rel="icon" type="image/png" href="../assets/images/logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/darkmode.css">
+<link rel="stylesheet" href="../assets/css/themes.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<div class="docs-shell">
+  <aside class="docs-sidebar">
+    <a href="../index.html" class="docs-brand">
+      <img src="../assets/images/logos/logo-mark.svg" alt="">
+      <span>Crypto<span class="brand-accent">Trade</span>Pro</span>
+    </a>
+    <nav class="docs-nav">
+      <div class="docs-nav-label">Documentation</div>
+      <a href="installation.html" class="active">Installation</a>
+      <a href="customization.html">Customization</a>
+      <a href="assets-guide.html">Assets guide</a>
+    </nav>
+    <a href="../index.html" class="docs-back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to app
+    </a>
+  </aside>
+
+  <main class="docs-content">
+    <div class="docs-breadcrumb">Documentation / Installation</div>
+    <h1>Installation</h1>
+    <p class="docs-lead">CryptoTradePro is a static HTML, CSS, and JavaScript template — no build step, framework, or server-side code required. This guide covers everything needed to get it running locally or live.</p>
+
+    <div class="docs-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86l-8.18 14A1.5 1.5 0 0 0 3.43 20h17.14a1.5 1.5 0 0 0 1.32-2.14l-8.18-14a1.5 1.5 0 0 0-2.62 0z"/></svg>
+      <div><strong>Demo template notice.</strong> All prices, balances, and order data in this template are simulated placeholders generated in the browser. There is no backend, no database, and no connection to a real exchange or wallet. Treat this as a front-end starting point to connect to your own services.</div>
+    </div>
+
+    <h2>1. File structure overview</h2>
+    <p>Every page lives at the project root as a standalone <code>.html</code> file. Shared styles live in <code>assets/css/</code>, shared scripts in <code>assets/js/</code>, and all media in <code>assets/images/</code>.</p>
+    <pre><code>crypto-trade-pro/
+├── index.html, markets.html, trading.html, ...
+├── assets/
+│   ├── css/   style.css, dashboard.css, responsive.css, darkmode.css, themes.css
+│   ├── js/    app.js, charts.js, trading.js, wallet.js, portfolio.js, settings.js
+│   └── images/  logos/, crypto/, avatars/, backgrounds/, icons/
+└── documentation/  installation.html, customization.html, assets-guide.html</code></pre>
+
+    <h2>2. Running locally</h2>
+    <p>Because the template uses only relative paths and no server-side logic, you can open <code>index.html</code> directly in a browser. For the best experience (and to avoid any browser restrictions on local file requests), serve the folder with a simple local server:</p>
+    <pre><code># Using Python 3
+cd crypto-trade-pro
+python3 -m http.server 8080
+# Then open http://localhost:8080 in your browser
+
+# Or using Node.js
+npx serve crypto-trade-pro</code></pre>
+
+    <h2>3. Required external resources</h2>
+    <p>The template loads two resources from a CDN at runtime — make sure outbound requests to these are allowed in your environment:</p>
+    <ul>
+      <li><strong>Google Fonts</strong> — Inter (UI typeface) and JetBrains Mono (data/numeric typeface), loaded via <code>fonts.googleapis.com</code>.</li>
+      <li><strong>ApexCharts</strong> — charting library, loaded via <code>cdn.jsdelivr.net</code>, used on the dashboard, portfolio, trading, and analytics pages.</li>
+    </ul>
+    <p>If you need a fully offline build, download both and reference them locally — see <a href="customization.html">Customization</a> for guidance on swapping resource paths.</p>
+
+    <h2>4. Adding your own images</h2>
+    <p>The template ships without bundled photography or coin artwork. Drop your files into the matching folder under <code>assets/images/</code> using the filenames already referenced in the HTML/JS (see the <a href="assets-guide.html">Assets guide</a> for the full list and recommended dimensions), and pages will pick them up automatically — no code changes needed.</p>
+
+    <h2>5. Deploying</h2>
+    <p>Because this is a static site, it deploys anywhere that serves static files: Netlify, Vercel, GitHub Pages, Cloudflare Pages, or a plain Apache/Nginx server. Upload the full <code>crypto-trade-pro/</code> folder, with <code>index.html</code> as the site root.</p>
+
+    <div class="docs-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <div>If you plan to connect this template to a real backend, exchange API, or wallet infrastructure, treat that integration as a separate, security-reviewed project — the front-end here makes no assumptions about how auth, balances, or order execution would actually be secured.</div>
+    </div>
+
+    <div class="docs-pagination">
+      <span></span>
+      <a href="customization.html">Next: Customization →</a>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

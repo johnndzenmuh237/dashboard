@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="classic">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assets guide — CryptoTradePro Docs</title>
+<meta name="description" content="Required image filenames, folders, and dimensions for the CryptoTradePro template.">
+<link rel="icon" type="image/png" href="../assets/images/logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/darkmode.css">
+<link rel="stylesheet" href="../assets/css/themes.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<div class="docs-shell">
+  <aside class="docs-sidebar">
+    <a href="../index.html" class="docs-brand">
+      <img src="../assets/images/logos/logo-mark.svg" alt="">
+      <span>Crypto<span class="brand-accent">Trade</span>Pro</span>
+    </a>
+    <nav class="docs-nav">
+      <div class="docs-nav-label">Documentation</div>
+      <a href="installation.html">Installation</a>
+      <a href="customization.html">Customization</a>
+      <a href="assets-guide.html" class="active">Assets guide</a>
+    </nav>
+    <a href="../index.html" class="docs-back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to app
+    </a>
+  </aside>
+
+  <main class="docs-content">
+    <div class="docs-breadcrumb">Documentation / Assets guide</div>
+    <h1>Assets guide</h1>
+    <p class="docs-lead">This template ships without bundled photography, coin icons, or avatars — only code. Add files with the exact names below to the matching folder under <code>assets/images/</code> and every page will pick them up automatically.</p>
+
+    <h2>1. Logos — <code>assets/images/logos/</code></h2>
+    <div class="docs-table-wrap">
+      <table class="docs-table">
+        <thead><tr><th>Filename</th><th>Used on</th><th>Recommended size</th></tr></thead>
+        <tbody>
+          <tr><td>logo-mark.svg</td><td>Sidebar brand, login, register, forgot-password</td><td>Square, scales cleanly at 26–30px</td></tr>
+          <tr><td>favicon.png</td><td>Browser tab icon, all pages</td><td>512×512px PNG</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. Coin icons — <code>assets/images/crypto/</code></h2>
+    <p>Referenced by ticker symbol from the shared <code>MarketData</code> object in <code>app.js</code>. Used in the ticker strip, market tables, portfolio holdings, wallets, staking, and the trading pair selector.</p>
+    <div class="docs-table-wrap">
+      <table class="docs-table">
+        <thead><tr><th>Filename</th><th>Coin</th></tr></thead>
+        <tbody>
+          <tr><td>btc.png</td><td>Bitcoin</td></tr>
+          <tr><td>eth.png</td><td>Ethereum</td></tr>
+          <tr><td>bnb.png</td><td>BNB</td></tr>
+          <tr><td>sol.png</td><td>Solana</td></tr>
+          <tr><td>xrp.png</td><td>XRP</td></tr>
+          <tr><td>ada.png</td><td>Cardano</td></tr>
+          <tr><td>doge.png</td><td>Dogecoin</td></tr>
+          <tr><td>dot.png</td><td>Polkadot</td></tr>
+          <tr><td>matic.png</td><td>Polygon</td></tr>
+          <tr><td>ltc.png</td><td>Litecoin</td></tr>
+          <tr><td>avax.png</td><td>Avalanche</td></tr>
+          <tr><td>link.png</td><td>Chainlink</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Recommended: 64×64px PNG, transparent background, circular crop (the CSS already applies <code>border-radius: 50%</code>, so a square source image works fine).</p>
+
+    <h2>3. Avatars — <code>assets/images/avatars/</code></h2>
+    <div class="docs-table-wrap">
+      <table class="docs-table">
+        <thead><tr><th>Filename</th><th>Used on</th><th>Recommended size</th></tr></thead>
+        <tbody>
+          <tr><td>user-01.jpg</td><td>Top bar user menu, profile page banner</td><td>200×200px, square crop</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The profile page also supports live avatar uploads via the camera icon (handled client-side in <code>settings.js</code>) — that preview doesn't require a file on disk, but the default image shown before upload does.</p>
+
+    <h2>4. Backgrounds — <code>assets/images/backgrounds/</code></h2>
+    <p>Used for NFT gallery card thumbnails on <code>nft.html</code>. The gallery cycles through 6 images:</p>
+    <pre><code>nft-placeholder-1.jpg
+nft-placeholder-2.jpg
+nft-placeholder-3.jpg
+nft-placeholder-4.jpg
+nft-placeholder-5.jpg
+nft-placeholder-6.jpg</code></pre>
+    <p>Recommended: 600×600px JPG or WebP, square aspect ratio (cards render at <code>aspect-ratio: 1</code>).</p>
+
+    <h2>5. Icons — <code>assets/images/icons/</code></h2>
+    <p>This folder is reserved for any custom icon assets you want to add beyond the inline SVGs already used throughout the template (navigation, buttons, status indicators). All built-in icons are hand-coded inline SVG with <code>stroke="currentColor"</code>, so they inherit theme colors automatically and need no files here by default.</p>
+
+    <div class="docs-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <div>Missing image files will show as broken-image icons in the browser rather than breaking layout — every <code>&lt;img&gt;</code> tag has defined dimensions or sits inside a sized container, so the page structure stays intact while you add assets incrementally.</div>
+    </div>
+
+    <div class="docs-pagination">
+      <a href="customization.html">← Customization</a>
+      <span></span>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="classic">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customization — CryptoTradePro Docs</title>
+<meta name="description" content="How to customize colors, themes, and content in the CryptoTradePro template.">
+<link rel="icon" type="image/png" href="../assets/images/logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/darkmode.css">
+<link rel="stylesheet" href="../assets/css/themes.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<div class="docs-shell">
+  <aside class="docs-sidebar">
+    <a href="../index.html" class="docs-brand">
+      <img src="../assets/images/logos/logo-mark.svg" alt="">
+      <span>Crypto<span class="brand-accent">Trade</span>Pro</span>
+    </a>
+    <nav class="docs-nav">
+      <div class="docs-nav-label">Documentation</div>
+      <a href="installation.html">Installation</a>
+      <a href="customization.html" class="active">Customization</a>
+      <a href="assets-guide.html">Assets guide</a>
+    </nav>
+    <a href="../index.html" class="docs-back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to app
+    </a>
+  </aside>
+
+  <main class="docs-content">
+    <div class="docs-breadcrumb">Documentation / Customization</div>
+    <h1>Customization</h1>
+    <p class="docs-lead">Every visual decision in CryptoTradePro is driven by CSS custom properties (variables), so most rebranding can be done by editing a handful of values in one place rather than hunting through every file.</p>
+
+    <h2>1. Color tokens</h2>
+    <p>All core colors live at the top of <code>assets/css/style.css</code> inside the <code>:root</code> block. Changing a value here updates it everywhere the variable is used.</p>
+    <pre><code>:root {
+  --bg-base:        #0B0E11;  /* page background */
+  --bg-panel:       #161A1E;  /* card / sidebar background */
+  --bg-elevated:    #1E2329;  /* inputs, table hover, chips */
+
+  --accent-green:   #0ECB81;  /* buy / positive / primary actions */
+  --accent-red:     #F6465D;  /* sell / negative */
+  --accent-amber:   #F0B90B;  /* highlights, staking, warnings */
+
+  --text-primary:   #EAECEF;
+  --text-secondary: #848E9C;
+  --text-tertiary:  #5E6673;
+}</code></pre>
+    <p>To rebrand the whole app to a new primary color, change <code>--accent-green</code> and <code>--accent-green-dim</code> — every button, active nav link, and positive-value indicator updates automatically.</p>
+
+    <h2>2. Switching themes at runtime</h2>
+    <p>Two independent systems control appearance, both defined in <code>assets/css/darkmode.css</code> and <code>assets/css/themes.css</code>:</p>
+    <ul>
+      <li><strong>Light / dark mode</strong> — toggled by setting <code>data-theme="dark"</code> or <code>data-theme="light"</code> on the <code>&lt;html&gt;</code> element. The toggle button with class <code>.theme-toggle-btn</code> (in the top bar and in Settings → Preferences) does this automatically via <code>assets/js/app.js</code>.</li>
+      <li><strong>Accent palette</strong> — toggled by setting <code>data-accent</code> to <code>classic</code>, <code>ocean</code>, <code>violet</code>, or <code>terminal</code>. The swatch picker on the Settings page (<code>.theme-swatch</code> elements) drives this.</li>
+    </ul>
+    <p>Both choices are saved to <code>localStorage</code> so they persist across page loads and across the whole site.</p>
+
+    <h2>3. Adding a new accent theme</h2>
+    <p>Open <code>assets/css/themes.css</code> and copy one of the existing blocks, for example:</p>
+    <pre><code>html[data-accent="myBrand"] {
+  --accent-green:   #YOUR_PRIMARY_COLOR;
+  --accent-green-dim: rgba(R, G, B, 0.12);
+  --accent-red:     #YOUR_NEGATIVE_COLOR;
+  --accent-red-dim: rgba(R, G, B, 0.12);
+  --accent-amber:   #YOUR_HIGHLIGHT_COLOR;
+  --accent-amber-dim: rgba(R, G, B, 0.12);
+}</code></pre>
+    <p>Then add a matching swatch button in <code>settings.html</code> using the existing <code>.theme-swatch</code> markup, with <code>data-swatch="myBrand"</code>.</p>
+
+    <h2>4. Typography</h2>
+    <p>Two typefaces are loaded from Google Fonts in every page's <code>&lt;head&gt;</code>: <strong>Inter</strong> for interface text and <strong>JetBrains Mono</strong> for all numeric data (prices, balances, percentages). Both are referenced via CSS variables:</p>
+    <pre><code>--font-ui:   'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+--font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;</code></pre>
+    <p>To swap fonts, update the Google Fonts <code>&lt;link&gt;</code> tag in each page's head and change these two variables in <code>style.css</code>.</p>
+
+    <h2>5. Logo and branding</h2>
+    <p>The sidebar and auth-page logos reference <code>assets/images/logos/logo-mark.svg</code> and the browser tab icon references <code>assets/images/logos/favicon.png</code>. Replace these two files with your own (same filenames) to rebrand instantly across all 14 pages — no HTML edits required.</p>
+
+    <h2>6. Replacing placeholder market data</h2>
+    <p>All coin names, prices, and percentages come from a single object in <code>assets/js/app.js</code>:</p>
+    <pre><code>const MarketData = {
+  coins: [
+    { id: 'btc', name: 'Bitcoin', ticker: 'BTC', price: 67342.18, change24h: 2.34, ... },
+    ...
+  ]
+};</code></pre>
+    <p>Every page (dashboard, markets, portfolio, trading, staking) reads from this list. Edit the array to change which assets appear, or connect a real price feed by replacing the static array with a fetch call — the rendering code in each page already expects this exact shape, so no other markup changes would be needed.</p>
+
+    <div class="docs-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86l-8.18 14A1.5 1.5 0 0 0 3.43 20h17.14a1.5 1.5 0 0 0 1.32-2.14l-8.18-14a1.5 1.5 0 0 0-2.62 0z"/></svg>
+      <div>If you connect this template to a live price feed, wallet provider, or exchange API, have that integration security-reviewed separately — this template's JavaScript was written for front-end demonstration only and does not implement authentication, key management, or transaction signing.</div>
+    </div>
+
+    <h2>7. Layout spacing and breakpoints</h2>
+    <p>Sidebar width, top bar height, and ticker height are all variables, so resizing the shell is a one-line change in <code>style.css</code>:</p>
+    <pre><code>--sidebar-width: 232px;
+--topbar-height: 64px;
+--ticker-height: 40px;</code></pre>
+    <p>Responsive breakpoints (1200px, 1024px, 768px, 480px) live in <code>assets/css/responsive.css</code>, organized from largest to smallest screen.</p>
+
+    <div class="docs-pagination">
+      <a href="installation.html">← Installation</a>
+      <a href="assets-guide.html">Next: Assets guide →</a>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

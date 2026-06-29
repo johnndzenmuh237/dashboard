@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="classic">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create account — CryptoTradePro</title>
+<meta name="description" content="Create your CryptoTradePro account.">
+<link rel="icon" type="image/png" href="assets/images/logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/darkmode.css">
+<link rel="stylesheet" href="assets/css/themes.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<style>
+  .auth-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+  .auth-form-col { display: flex; flex-direction: column; justify-content: center; padding: 40px; }
+  .auth-form-wrap { max-width: 420px; width: 100%; margin: 0 auto; }
+  .auth-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; }
+  .auth-brand img { width: 30px; height: 30px; }
+  .auth-brand span { font-weight: 700; font-size: 1.15rem; }
+  .auth-brand .brand-accent { color: var(--accent-green); }
+  .auth-form-wrap h1 { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+  .auth-form-wrap > p.lead { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 26px; }
+  .auth-divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; font-size: 0.78rem; color: var(--text-tertiary); }
+  .auth-divider::before, .auth-divider::after { content: ''; flex: 1; height: 1px; background: var(--border-subtle); }
+  .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 11px; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); background: var(--bg-elevated); color: var(--text-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; transition: background var(--transition-base); }
+  .social-btn:hover { background: var(--bg-hover); }
+  .social-btn svg { width: 18px; height: 18px; }
+  .auth-footer-link { text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-top: 22px; }
+  .auth-footer-link a { color: var(--accent-green); font-weight: 600; }
+  .auth-footer-link a:hover { text-decoration: underline; }
+  .auth-visual { position: relative; background: linear-gradient(160deg, #0B0E11 0%, #121823 55%, #1A1306 100%); overflow: hidden; display: flex; align-items: flex-end; padding: 50px; }
+  .auth-visual::before { content: ''; position: absolute; top: -15%; right: -10%; width: 480px; height: 480px; background: radial-gradient(circle, rgba(240,185,11,0.14) 0%, transparent 70%); }
+  .auth-visual-content { position: relative; z-index: 1; max-width: 420px; }
+  .auth-visual-content h2 { font-size: 1.7rem; font-weight: 800; line-height: 1.3; margin-bottom: 14px; }
+  .auth-visual-content p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 22px; }
+  .auth-feature-list { display: flex; flex-direction: column; gap: 12px; }
+  .auth-feature-list li { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--text-secondary); }
+  .auth-feature-list svg { width: 18px; height: 18px; color: var(--accent-amber); flex-shrink: 0; }
+  .top-link-row { position: absolute; top: 24px; right: 32px; font-size: 0.82rem; color: var(--text-secondary); }
+  .top-link-row a { color: var(--accent-green); font-weight: 600; }
+  .pw-strength { display: flex; gap: 4px; margin-top: 8px; }
+  .pw-strength span { height: 4px; flex: 1; border-radius: 2px; background: var(--border-subtle); transition: background var(--transition-base); }
+  .pw-strength.weak span:nth-child(1) { background: var(--accent-red); }
+  .pw-strength.medium span:nth-child(1), .pw-strength.medium span:nth-child(2) { background: var(--accent-amber); }
+  .pw-strength.strong span { background: var(--accent-green); }
+</style>
+</head>
+<body>
+
+<div class="auth-layout">
+  <div class="auth-form-col">
+    <div class="top-link-row">Already have an account? <a href="login.html">Sign in</a></div>
+    <div class="auth-form-wrap">
+      <a href="index.html" class="auth-brand">
+        <img src="assets/images/logos/logo-mark.svg" alt="">
+        <span>Crypto<span class="brand-accent">Trade</span>Pro</span>
+      </a>
+
+      <h1>Create your account</h1>
+      <p class="lead">Start tracking and trading crypto in minutes.</p>
+
+      <button type="button" class="social-btn">
+        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.07 5.07 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.69-2.26 1.1-3.71 1.1-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.14a6.6 6.6 0 0 1 0-4.27V7.03H2.18a11 11 0 0 0 0 9.94l3.66-2.83z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15A11 11 0 0 0 12 1 11 11 0 0 0 2.18 7.03l3.66 2.84c.87-2.6 3.3-4.49 6.16-4.49z"/></svg>
+        Continue with Google
+      </button>
+      <button type="button" class="social-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-3.014 1.57-.12 0-.23-.02-.3-.03-.014-.1-.04-.04-.04-.14 0-1.1.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.156-1.68.03.13.17.06.17.18zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.4-2.79-1.43-2.04-2.5-5.27-2.5-8.16 0-4.51 2.93-6.91 5.815-6.91 1.555 0 2.844.95 3.815.95.92 0 2.39-1.01 4.13-1.01.67 0 3.08.06 4.66 2.34-.12.08-2.77 1.62-2.77 4.95 0 3.81 3.36 5.15 3.5 5.21z"/></svg>
+        Continue with Apple
+      </button>
+
+      <div class="auth-divider">or sign up with email</div>
+
+      <form id="registerForm" novalidate>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+          <div class="form-group">
+            <label class="form-label" for="regFirstName">First name</label>
+            <input type="text" id="regFirstName" class="form-input" placeholder="Daniel" required>
+            <span class="form-error">First name is required.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regLastName">Last name</label>
+            <input type="text" id="regLastName" class="form-input" placeholder="Okafor" required>
+            <span class="form-error">Last name is required.</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email address</label>
+          <div class="input-with-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+            <input type="email" id="regEmail" class="form-input" placeholder="you@example.com" autocomplete="email" required>
+          </div>
+          <span class="form-error">Please enter a valid email address.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Password</label>
+          <div class="input-with-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <input type="password" id="regPassword" class="form-input" placeholder="Create a password" autocomplete="new-password" required>
+            <button type="button" class="toggle-visibility" data-toggle-for="regPassword" aria-label="Show password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="pw-strength" id="pwStrengthBar"><span></span><span></span><span></span></div>
+          <p class="form-hint" id="pwStrengthLabel">Use 8+ characters with a mix of letters, numbers &amp; symbols.</p>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-row">
+            <input type="checkbox" id="agreeTerms" required>
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+          </label>
+          <span class="form-error" id="termsError" style="margin-left:24px;">You must accept the terms to continue.</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Create account</button>
+      </form>
+
+      <p class="auth-footer-link">Already have an account? <a href="login.html">Sign in</a></p>
+    </div>
+  </div>
+
+  <div class="auth-visual">
+    <div class="auth-visual-content">
+      <h2>Everything you need to manage crypto, in one place.</h2>
+      <p>Demo dashboard with simulated balances and market data — explore the full experience risk-free.</p>
+      <ul class="auth-feature-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Real-time-style market data</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Portfolio &amp; staking tools</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Secure two-factor authentication</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.toggle-visibility').forEach((btn) => {
+      btn.addEventListener('click', function () {
+        const input = document.getElementById(btn.getAttribute('data-toggle-for'));
+        if (!input) return;
+        input.type = input.type === 'password' ? 'text' : 'password';
+      });
+    });
+
+    const pwInput = document.querySelector('#regPassword');
+    const pwBar = document.querySelector('#pwStrengthBar');
+    const pwLabel = document.querySelector('#pwStrengthLabel');
+    if (pwInput && pwBar) {
+      pwInput.addEventListener('input', function () {
+        const val = pwInput.value;
+        let score = 0;
+        if (val.length >= 8) score++;
+        if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score++;
+        if (/[^A-Za-z0-9]/.test(val) && val.length >= 10) score++;
+
+        pwBar.classList.remove('weak', 'medium', 'strong');
+        if (!val) { pwLabel.textContent = 'Use 8+ characters with a mix of letters, numbers & symbols.'; }
+        else if (score <= 1) { pwBar.classList.add('weak'); pwLabel.textContent = 'Weak password'; }
+        else if (score === 2) { pwBar.classList.add('medium'); pwLabel.textContent = 'Medium strength password'; }
+        else { pwBar.classList.add('strong'); pwLabel.textContent = 'Strong password'; }
+      });
+    }
+
+    const form = document.querySelector('#registerForm');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let valid = true;
+
+        ['#regFirstName', '#regLastName'].forEach((sel) => {
+          const field = document.querySelector(sel);
+          const group = field.closest('.form-group');
+          if (!field.value.trim()) { group.classList.add('has-error'); valid = false; }
+          else { group.classList.remove('has-error'); }
+        });
+
+        const email = document.querySelector('#regEmail');
+        const emailGroup = email.closest('.form-group');
+        if (!email.value.includes('@')) { emailGroup.classList.add('has-error'); valid = false; }
+        else { emailGroup.classList.remove('has-error'); }
+
+        const password = document.querySelector('#regPassword');
+        const passGroup = password.closest('.form-group');
+        if (password.value.length < 8) { passGroup.classList.add('has-error'); valid = false; }
+        else { passGroup.classList.remove('has-error'); }
+
+        const terms = document.querySelector('#agreeTerms');
+        const termsError = document.querySelector('#termsError');
+        if (!terms.checked) { termsError.style.display = 'block'; valid = false; }
+        else { termsError.style.display = 'none'; }
+
+        if (!valid) return;
+
+        showToast({ type: 'success', title: 'Account created', message: 'Redirecting to your dashboard...' });
+        setTimeout(() => { window.location.href = 'index.html'; }, 900);
+      });
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* ==========================================================================
+   CryptoTradePro — Accent Themes
+   Alternate accent-color schemes, selectable from Settings > Preferences.
+   Applied via [data-accent] attribute on <html>, independent of light/dark
+   mode (set in darkmode.css).
+   ========================================================================== */
+
+/* --- Default: Green/Red (Binance-style) — matches style.css :root --- */
+html[data-accent="classic"] {
+  --accent-green:   #0ECB81;
+  --accent-green-dim: rgba(14, 203, 129, 0.12);
+  --accent-red:     #F6465D;
+  --accent-red-dim: rgba(246, 70, 93, 0.12);
+  --accent-amber:   #F0B90B;
+  --accent-amber-dim: rgba(240, 185, 11, 0.12);
+}
+
+/* --- Ocean: Teal/Coral --- */
+html[data-accent="ocean"] {
+  --accent-green:   #14B8A6;
+  --accent-green-dim: rgba(20, 184, 166, 0.12);
+  --accent-red:     #FB7185;
+  --accent-red-dim: rgba(251, 113, 133, 0.12);
+  --accent-amber:   #38BDF8;
+  --accent-amber-dim: rgba(56, 189, 248, 0.12);
+}
+
+/* --- Violet: Purple/Pink neon --- */
+html[data-accent="violet"] {
+  --accent-green:   #A78BFA;
+  --accent-green-dim: rgba(167, 139, 250, 0.14);
+  --accent-red:     #F472B6;
+  --accent-red-dim: rgba(244, 114, 182, 0.14);
+  --accent-amber:   #FBBF24;
+  --accent-amber-dim: rgba(251, 191, 36, 0.14);
+}
+
+/* --- Classic Terminal: Amber/Green CRT-style --- */
+html[data-accent="terminal"] {
+  --accent-green:   #39FF88;
+  --accent-green-dim: rgba(57, 255, 136, 0.12);
+  --accent-red:     #FF5C5C;
+  --accent-red-dim: rgba(255, 92, 92, 0.12);
+  --accent-amber:   #FFD23F;
+  --accent-amber-dim: rgba(255, 210, 63, 0.12);
+}
+
+/* --- Accent swatches for the theme picker UI in settings.html --- */
+.theme-swatch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition-base);
+}
+.theme-swatch:hover { border-color: var(--border-strong); }
+.theme-swatch.selected { border-color: var(--accent-green); background: var(--accent-green-dim); }
+
+.theme-swatch .swatch-dots { display: flex; gap: 4px; }
+.theme-swatch .swatch-dots span { width: 14px; height: 14px; border-radius: 50%; display: block; }
+
+.theme-swatch[data-swatch="classic"] .swatch-dots span:nth-child(1) { background: #0ECB81; }
+.theme-swatch[data-swatch="classic"] .swatch-dots span:nth-child(2) { background: #F6465D; }
+.theme-swatch[data-swatch="classic"] .swatch-dots span:nth-child(3) { background: #F0B90B; }
+
+.theme-swatch[data-swatch="ocean"] .swatch-dots span:nth-child(1) { background: #14B8A6; }
+.theme-swatch[data-swatch="ocean"] .swatch-dots span:nth-child(2) { background: #FB7185; }
+.theme-swatch[data-swatch="ocean"] .swatch-dots span:nth-child(3) { background: #38BDF8; }
+
+.theme-swatch[data-swatch="violet"] .swatch-dots span:nth-child(1) { background: #A78BFA; }
+.theme-swatch[data-swatch="violet"] .swatch-dots span:nth-child(2) { background: #F472B6; }
+.theme-swatch[data-swatch="violet"] .swatch-dots span:nth-child(3) { background: #FBBF24; }
+
+.theme-swatch[data-swatch="terminal"] .swatch-dots span:nth-child(1) { background: #39FF88; }
+.theme-swatch[data-swatch="terminal"] .swatch-dots span:nth-child(2) { background: #FF5C5C; }
+.theme-swatch[data-swatch="terminal"] .swatch-dots span:nth-child(3) { background: #FFD23F; }
+
+.theme-swatch span.swatch-label { font-size: 0.82rem; font-weight: 600; }

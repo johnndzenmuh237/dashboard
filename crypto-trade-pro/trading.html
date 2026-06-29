@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="classic">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading — CryptoTradePro</title>
+<meta name="description" content="Place simulated buy and sell orders with live-style charting, order book, and trade history.">
+<link rel="icon" type="image/png" href="assets/images/logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="assets/css/darkmode.css">
+<link rel="stylesheet" href="assets/css/themes.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="sidebar-scrim"></div>
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="assets/images/logos/logo-mark.svg" alt="">
+      <span>Crypto<span class="brand-accent">Trade</span>Pro</span>
+    </div>
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <div class="nav-group"><div class="nav-group-label">Overview</div><a class="nav-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>Dashboard</span></a><a class="nav-link" href="markets.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg><span>Markets</span></a><a class="nav-link" href="portfolio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/></svg><span>Portfolio</span></a></div><div class="nav-group"><div class="nav-group-label">Trade</div><a class="nav-link active" href="trading.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Trading</span></a><a class="nav-link" href="wallets.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="17" cy="15" r="1.2" fill="currentColor"/></svg><span>Wallets</span></a><a class="nav-link" href="transactions.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>Transactions</span></a></div><div class="nav-group"><div class="nav-group-label">Earn</div><a class="nav-link" href="staking.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg><span>Staking</span><span class="badge">5.4%</span></a><a class="nav-link" href="nft.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>NFT Gallery</span></a><a class="nav-link" href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg><span>Analytics</span></a></div><div class="nav-group"><div class="nav-group-label">Account</div><a class="nav-link" href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Profile</span></a><a class="nav-link" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></a></div>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="sidebar-toggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 3v18M3 3h18v18H3z"/></svg>
+        <span style="margin-left:8px;">Collapse</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="main-col">
+
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-menu-btn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" placeholder="Search coins, pairs..." aria-label="Search">
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-balance">
+          <span class="label">Total balance</span>
+          <span class="value">$24,512.84</span>
+        </div>
+        <button class="icon-btn theme-toggle-btn" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="dot"></span></button>
+        <a class="user-menu" href="profile.html">
+          <img src="assets/images/avatars/user-01.jpg" alt="">
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <div class="ticker-strip" aria-label="Live market ticker">
+      <div class="ticker-track"></div>
+    </div>
+
+    <main class="page-content">
+      
+      <div class="page-header">
+        <div>
+          <h1>Trading</h1>
+          <p>Simulated trading terminal — orders placed here do not use real funds.</p>
+        </div>
+      </div>
+
+      
+      <div class="trading-layout">
+
+        <div class="trading-pair-bar">
+          <div class="pair-selector" data-dropdown-trigger="pairDropdown">
+            <img src="assets/images/crypto/btc.png" alt="">
+            <div>
+              <div class="pair-name">BTC/USDT</div>
+              <div class="pair-sub">Bitcoin</div>
+            </div>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="pair-stat">
+            <span class="pstat-label">Last price</span>
+            <span class="pstat-value up" data-live-price="67342.18">$67,342.18</span>
+          </div>
+          <div class="pair-stat">
+            <span class="pstat-label">24h change</span>
+            <span class="pstat-value up">+2.34%</span>
+          </div>
+          <div class="pair-stat">
+            <span class="pstat-label">24h high</span>
+            <span class="pstat-value">$68,120.55</span>
+          </div>
+          <div class="pair-stat">
+            <span class="pstat-label">24h low</span>
+            <span class="pstat-value">$65,890.02</span>
+          </div>
+          <div class="pair-stat">
+            <span class="pstat-label">24h volume (BTC)</span>
+            <span class="pstat-value">42,108.3</span>
+          </div>
+        </div>
+
+        <div class="trading-main">
+          <div class="chart-panel">
+            <div class="chart-toolbar">
+              <button class="tf-btn" data-tf="1m">1m</button>
+              <button class="tf-btn" data-tf="5m">5m</button>
+              <button class="tf-btn active" data-tf="1h">1h</button>
+              <button class="tf-btn" data-tf="4h">4h</button>
+              <button class="tf-btn" data-tf="1d">1D</button>
+              <button class="tf-btn" data-tf="1w">1W</button>
+            </div>
+            <div id="priceChart"></div>
+          </div>
+
+          <div class="orderbook-trades-row">
+            <div class="orderbook-panel">
+              <div class="panel-header"><h3>Order book</h3></div>
+              <div class="orderbook-head"><span>Price (USDT)</span><span style="text-align:right;">Amount (BTC)</span><span style="text-align:right;">Total</span></div>
+              <div class="orderbook-rows" id="orderbookAsks"></div>
+              <div class="ob-spread">Spread: $4.20 (0.006%)</div>
+              <div class="orderbook-rows" id="orderbookBids"></div>
+            </div>
+
+            <div class="trades-panel">
+              <div class="panel-header"><h3>Recent trades</h3></div>
+              <div class="trades-head"><span>Price (USDT)</span><span style="text-align:right;">Amount (BTC)</span><span style="text-align:right;">Time</span></div>
+              <div id="recentTrades"></div>
+            </div>
+          </div>
+
+          <div class="panel open-orders-panel">
+            <div class="panel-header">
+              <h3>Open orders</h3>
+              <div class="tabs" data-tabs style="border-bottom:none; margin-bottom:0;">
+                <button class="tab-btn active" data-tab="open">Open</button>
+                <button class="tab-btn" data-tab="history">Order history</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Time</th><th>Pair</th><th>Side</th><th>Type</th><th>Price</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+                <tbody id="openOrdersBody">
+                  <tr class="empty-row"><td colspan="8">
+                    <div class="empty-state" style="padding:30px 10px;">
+                      <p>No open orders yet. Place an order to see it here.</p>
+                    </div>
+                  </td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-entry">
+          <div class="order-side-toggle">
+            <button class="side-buy active">Buy</button>
+            <button class="side-sell">Sell</button>
+          </div>
+          <div class="order-type-tabs" data-tabs>
+            <button class="tab-btn active" data-tab="limit">Limit</button>
+            <button class="tab-btn" data-tab="market">Market</button>
+            <button class="tab-btn" data-tab="stop-limit">Stop-limit</button>
+          </div>
+          <form class="order-form-body" id="orderForm">
+            <div class="balance-line"><span>Available</span><span id="availableBalance" data-value="0.5821">0.5821 BTC</span></div>
+
+            <div class="form-group" id="limitPriceField">
+              <label class="form-label" for="orderPrice">Price</label>
+              <div class="input-suffix">
+                <input type="number" id="orderPrice" class="form-input" value="67342.18" step="0.01">
+                <span class="suffix-tag">USDT</span>
+              </div>
+            </div>
+
+            <div class="form-group" id="stopPriceField" style="display:none;">
+              <label class="form-label" for="stopPrice">Stop price</label>
+              <div class="input-suffix">
+                <input type="number" id="stopPrice" class="form-input" placeholder="0.00" step="0.01">
+                <span class="suffix-tag">USDT</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="orderAmount">Amount</label>
+              <div class="input-suffix">
+                <input type="number" id="orderAmount" class="form-input" placeholder="0.00" step="0.000001" min="0">
+                <span class="suffix-tag">BTC</span>
+              </div>
+            </div>
+
+            <div class="percent-row">
+              <button type="button" data-pct="25">25%</button>
+              <button type="button" data-pct="50">50%</button>
+              <button type="button" data-pct="75">75%</button>
+              <button type="button" data-pct="100">100%</button>
+            </div>
+
+            <div class="order-summary-row"><span>Order total</span><span id="orderTotalValue">$0.00</span></div>
+            <div class="order-summary-row"><span>Est. fee (0.10%)</span><span id="orderFeeValue">$0.00</span></div>
+
+            <button type="submit" id="orderSubmitBtn" class="btn btn-primary btn-block btn-lg">Buy BTC</button>
+            <p class="form-hint" style="text-align:center; margin-top:10px;">Simulated order — no real funds are used.</p>
+          </form>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 CryptoTradePro. Demo interface — all prices and balances are simulated placeholder data.</p>
+    </footer>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.45.1/dist/apexcharts.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/trading.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Order book placeholder rows
+    const asks = document.querySelector('#orderbookAsks');
+    const bids = document.querySelector('#orderbookBids');
+    if (asks && bids) {
+      let askRows = '', bidRows = '';
+      let price = 67346;
+      for (let i = 10; i >= 1; i--) {
+        const amount = (Math.random() * 1.2 + 0.05).toFixed(4);
+        const depth = Math.min(100, i * 9);
+        askRows += '<div class="ob-row ask"><div class="depth-bar" style="width:' + depth + '%;"></div><span class="price ask">' + (price + i * 1.8).toFixed(2) + '</span><span class="amount">' + amount + '</span><span class="total">' + (amount * price).toFixed(0) + '</span></div>';
+      }
+      for (let i = 1; i <= 10; i++) {
+        const amount = (Math.random() * 1.2 + 0.05).toFixed(4);
+        const depth = Math.min(100, i * 9);
+        bidRows += '<div class="ob-row bid"><div class="depth-bar" style="width:' + depth + '%;"></div><span class="price bid">' + (price - i * 1.8).toFixed(2) + '</span><span class="amount">' + amount + '</span><span class="total">' + (amount * price).toFixed(0) + '</span></div>';
+      }
+      asks.innerHTML = askRows;
+      bids.innerHTML = bidRows;
+    }
+
+    // Recent trades placeholder rows
+    const trades = document.querySelector('#recentTrades');
+    if (trades) {
+      let rows = '';
+      let price = 67342;
+      for (let i = 0; i < 16; i++) {
+        const isBuy = Math.random() > 0.45;
+        price += (Math.random() - 0.5) * 4;
+        const amount = (Math.random() * 0.8 + 0.001).toFixed(4);
+        const minsAgo = i === 0 ? 'now' : i + 'm ago';
+        rows += '<div class="trade-row"><span class="price ' + (isBuy ? 'buy' : 'sell') + '">' + price.toFixed(2) + '</span><span class="amount">' + amount + '</span><span class="time">' + minsAgo + '</span></div>';
+      }
+      trades.innerHTML = rows;
+    }
+  });
+</script>
+</body>
+</html>

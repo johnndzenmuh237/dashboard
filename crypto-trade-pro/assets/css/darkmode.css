@@ -1,0 +1,66 @@
+/* ==========================================================================
+   CryptoTradePro — Dark Mode
+   The dark trading-terminal theme is the default look of the app (set in
+   style.css :root). This file makes that theme explicit and toggleable via
+   a [data-theme] attribute on <html>, and defines the light-mode override
+   for users who switch it off in Settings > Preferences.
+   ========================================================================== */
+
+html[data-theme="dark"] {
+  --bg-base:        #0B0E11;
+  --bg-panel:       #161A1E;
+  --bg-elevated:    #1E2329;
+  --bg-hover:       #2B3139;
+  --border-subtle:  #2B3139;
+  --border-strong:  #363C45;
+
+  --text-primary:   #EAECEF;
+  --text-secondary: #848E9C;
+  --text-tertiary:  #5E6673;
+
+  --shadow-panel: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Light mode override --- */
+html[data-theme="light"] {
+  --bg-base:        #F5F6F8;
+  --bg-panel:       #FFFFFF;
+  --bg-elevated:    #F0F2F5;
+  --bg-hover:       #E7EAEE;
+  --border-subtle:  #E3E6EB;
+  --border-strong:  #D3D8DF;
+
+  --text-primary:   #1E2329;
+  --text-secondary: #5E6673;
+  --text-tertiary:  #8A92A0;
+
+  --accent-green-dim: rgba(14, 203, 129, 0.10);
+  --accent-red-dim: rgba(246, 70, 93, 0.10);
+  --accent-amber-dim: rgba(240, 185, 11, 0.14);
+
+  --shadow-panel: 0 2px 14px rgba(30, 35, 41, 0.08);
+}
+
+html[data-theme="light"] body {
+  background: var(--bg-base);
+}
+
+html[data-theme="light"] .ticker-strip {
+  background: var(--bg-elevated);
+}
+
+html[data-theme="light"] .nav-link.active::before {
+  background: var(--accent-green);
+}
+
+html[data-theme="light"] .skeleton {
+  background: linear-gradient(90deg, #E7EAEE 25%, #F0F2F5 50%, #E7EAEE 75%);
+  background-size: 200% 100%;
+}
+
+/* --- Theme toggle switch icon states (used in topbar / settings) --- */
+.theme-toggle-btn .icon-sun { display: none; }
+.theme-toggle-btn .icon-moon { display: block; }
+
+html[data-theme="light"] .theme-toggle-btn .icon-sun { display: block; }
+html[data-theme="light"] .theme-toggle-btn .icon-moon { display: none; }
